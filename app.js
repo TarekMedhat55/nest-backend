@@ -38,11 +38,6 @@ app.use("/api/brand", brandRoute);
 app.use("/api/order", orderRoute);
 app.use("/api/compare", compareRoute);
 //*Set static folder up in production
-app.use(express.static(path.resolve(__dirname, "./client/build")));
-
-app.get("*", function (req, res) {
-  res.sendFile(path.resolve(__dirname, "./client/build", "index.html"));
-});
 
 app.use(NotFoundMiddleware);
 app.use(ErrorHandlerMiddleware);
